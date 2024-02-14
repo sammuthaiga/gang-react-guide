@@ -15,6 +15,11 @@
     <!-- create a React component to control the div app. -->
     <script type="text/babel">
         class App extends React.Component {
+             // Add state to this component  
+            state = {
+                name: 'John Doe',
+                age: 30
+            }
             render () {
                 return (
                     <div className ="app-content">
