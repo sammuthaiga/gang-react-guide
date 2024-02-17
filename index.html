@@ -20,11 +20,14 @@
                 name: 'John Doe',
                 age: 30
             }
-            handleClick(e) {
+            handleClick = (e) => {
                 console.log(e.target)
             }
-            handleMouseOver(e) {
+            handleMouseOver = (e) => {
                 console.log(e)
+            }
+            handleCopy = (e) => {
+                console.log('Congrats! You have copied the text')
             }
             render () {
                 return (
@@ -35,6 +38,7 @@
                         <p>My age is { this.state.age }</p>
                         <button onClick={this.handleClick}>Click Me!</button>
                         <button onMouseOver={this.handleMouseOver}>Hover Over Me!</button>
+                        <p onCopy={this.handleCopy}>Full Stack I have become!!</p>
                     </div>
                 )
             }
