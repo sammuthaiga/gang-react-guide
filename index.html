@@ -20,14 +20,17 @@
                 name: 'John Doe',
                 age: 30
             }
+            handleClick(e) {
+                console.log(e.target)
+            }
             render () {
                 return (
                     <div className ="app-content">
                         <h1>Hello World</h1>
                         <p>This is a React component</p>
-                        <p>My name is { this.state.name } </p>
+                        <p>My name is { this.state.name } </p> 
                         <p>My age is { this.state.age }</p>
-                        { Math.random() > 0.5 ? <p>Greater than 0.5</p> : <p>Less than 0.5</p> }
+                        <button onClick={this.handleClick}>Click Me!</button>
                     </div>
                 )
             }
