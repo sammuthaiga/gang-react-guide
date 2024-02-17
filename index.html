@@ -20,33 +20,31 @@
                 name: 'John Doe',
                 age: 30
             }
-            handleClick = (e) => {
-                //console.log(e.target)
-                this.setState({
-                    name: 'Jane Doe',
-                    age: 25
-                });
-                console.log(this.state)
 
+            handleChange = (e) => {
+                this.setState({
+                    name: e.target.value
+                })
             }
-            handleMouseOver = (e) => {
-                console.log(e)
+            handleSubmit = (e) => {
+                e.preventDefault();
+                console.log('Form submitted', this.state.name);
             }
-            handleCopy = (e) => {
-                console.log('Congrats! You have copied the text')
-            }
+
+
+    
             render () {
                 return (
                     <div className ="app-content">
-                        <h1>Hello World</h1>
-                        <p>This is a React component</p>
-                        <p>My name is { this.state.name } </p> 
-                        <p>My age is { this.state.age }</p>
-                        <button onClick={this.handleClick}>Click Me!</button>
-                        <button onMouseOver={this.handleMouseOver}>Hover Over Me!</button>
-                        <p onCopy={this.handleCopy}>Full Stack I have become!!</p>
+                        <h1>Hi! My name is {this.state.name}</h1>
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" onChange={this.handleChange}/>
+                            <button>Submit</button>
+                        </form>
+                        
                     </div>
-                )
+                                  
+                );
             }
         }
 
